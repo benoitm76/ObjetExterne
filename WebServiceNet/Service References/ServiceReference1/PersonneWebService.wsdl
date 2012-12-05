@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://externe.webservices.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="PersonneWebService" targetNamespace="http://externe.webservices.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://benguigcentos:8080/PersonneWebService/PersonneWebService?xsd=1" namespace="http://externe.webservices.com/" />
+    </xsd:schema>
+  </types>
+  <message name="hello">
+    <part name="parameters" element="tns:hello" />
+  </message>
+  <message name="helloResponse">
+    <part name="parameters" element="tns:helloResponse" />
+  </message>
+  <message name="RecherchePersonne">
+    <part name="parameters" element="tns:RecherchePersonne" />
+  </message>
+  <message name="RecherchePersonneResponse">
+    <part name="parameters" element="tns:RecherchePersonneResponse" />
+  </message>
+  <message name="GetPersonne">
+    <part name="parameters" element="tns:GetPersonne" />
+  </message>
+  <message name="GetPersonneResponse">
+    <part name="parameters" element="tns:GetPersonneResponse" />
+  </message>
+  <message name="GetAllPersonnes">
+    <part name="parameters" element="tns:GetAllPersonnes" />
+  </message>
+  <message name="GetAllPersonnesResponse">
+    <part name="parameters" element="tns:GetAllPersonnesResponse" />
+  </message>
+  <message name="RecherchePersonnes">
+    <part name="parameters" element="tns:RecherchePersonnes" />
+  </message>
+  <message name="RecherchePersonnesResponse">
+    <part name="parameters" element="tns:RecherchePersonnesResponse" />
+  </message>
+  <portType name="PersonneWebService">
+    <operation name="hello">
+      <input wsam:Action="http://externe.webservices.com/PersonneWebService/helloRequest" message="tns:hello" />
+      <output wsam:Action="http://externe.webservices.com/PersonneWebService/helloResponse" message="tns:helloResponse" />
+    </operation>
+    <operation name="RecherchePersonne">
+      <input wsam:Action="http://externe.webservices.com/PersonneWebService/RecherchePersonneRequest" message="tns:RecherchePersonne" />
+      <output wsam:Action="http://externe.webservices.com/PersonneWebService/RecherchePersonneResponse" message="tns:RecherchePersonneResponse" />
+    </operation>
+    <operation name="GetPersonne">
+      <input wsam:Action="http://externe.webservices.com/PersonneWebService/GetPersonneRequest" message="tns:GetPersonne" />
+      <output wsam:Action="http://externe.webservices.com/PersonneWebService/GetPersonneResponse" message="tns:GetPersonneResponse" />
+    </operation>
+    <operation name="GetAllPersonnes">
+      <input wsam:Action="http://externe.webservices.com/PersonneWebService/GetAllPersonnesRequest" message="tns:GetAllPersonnes" />
+      <output wsam:Action="http://externe.webservices.com/PersonneWebService/GetAllPersonnesResponse" message="tns:GetAllPersonnesResponse" />
+    </operation>
+    <operation name="RecherchePersonnes">
+      <input wsam:Action="http://externe.webservices.com/PersonneWebService/RecherchePersonnesRequest" message="tns:RecherchePersonnes" />
+      <output wsam:Action="http://externe.webservices.com/PersonneWebService/RecherchePersonnesResponse" message="tns:RecherchePersonnesResponse" />
+    </operation>
+  </portType>
+  <binding name="PersonneWebServicePortBinding" type="tns:PersonneWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="hello">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RecherchePersonne">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetPersonne">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GetAllPersonnes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RecherchePersonnes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="PersonneWebService">
+    <port name="PersonneWebServicePort" binding="tns:PersonneWebServicePortBinding">
+      <soap:address location="http://benguigcentos:8080/PersonneWebService/PersonneWebService" />
+    </port>
+  </service>
+</definitions>

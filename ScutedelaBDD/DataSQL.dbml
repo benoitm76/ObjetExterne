@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MJSBDD" Class="DataSQLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=172.16.254.161;Initial Catalog=MJSBDD;Persist Security Info=True;User ID=Hiurro" SettingsObjectName="ScutedelaBDD.Properties.Settings" SettingsPropertyName="MJSBDDConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.T_CONSEILLER" Member="T_CONSEILLER">
+    <Type Name="T_CONSEILLER">
+      <Column Name="ID_CONSEILLER" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NOM_CONSEILLER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PRENOM_CONSEILLER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="T_CONSEILLER_T_PERSONNE" Member="T_PERSONNE" ThisKey="ID_CONSEILLER" OtherKey="ID_CONSEILLER" Type="T_PERSONNE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_TYPE_METIER" Member="T_TYPE_METIER">
+    <Type Name="T_TYPE_METIER">
+      <Column Name="TYPE_METIER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ID_TYPE_METIER" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="T_TYPE_METIER_T_METIER" Member="T_METIER" ThisKey="ID_TYPE_METIER" OtherKey="ID_TYPE_METIER" Type="T_METIER" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_EMPLOI" Member="T_EMPLOI">
+    <Type Name="T_EMPLOI">
+      <Column Name="ID_EMPLOI" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_METIER" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PERSONNE" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="NOM_EMPLOI" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="T_METIER_T_EMPLOI" Member="T_METIER" ThisKey="ID_METIER" OtherKey="ID_METIER" Type="T_METIER" IsForeignKey="true" />
+      <Association Name="T_PERSONNE_T_EMPLOI" Member="T_PERSONNE" ThisKey="ID_PERSONNE" OtherKey="ID_PERSONNE" Type="T_PERSONNE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_ETUDIANT" Member="T_ETUDIANT">
+    <Type Name="T_ETUDIANT">
+      <Column Name="ID_ETUDIANT" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_PERSONNE" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="N_CARTE" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="T_PERSONNE_T_ETUDIANT" Member="T_PERSONNE" ThisKey="ID_PERSONNE" OtherKey="ID_PERSONNE" Type="T_PERSONNE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_METIER" Member="T_METIER">
+    <Type Name="T_METIER">
+      <Column Name="ID_METIER" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_TYPE_METIER" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="METIER" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="T_METIER_T_EMPLOI" Member="T_EMPLOI" ThisKey="ID_METIER" OtherKey="ID_METIER" Type="T_EMPLOI" />
+      <Association Name="T_TYPE_METIER_T_METIER" Member="T_TYPE_METIER" ThisKey="ID_TYPE_METIER" OtherKey="ID_TYPE_METIER" Type="T_TYPE_METIER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_PERSONNE" Member="T_PERSONNE">
+    <Type Name="T_PERSONNE">
+      <Column Name="ID_PERSONNE" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_CONSEILLER" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="NOM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PRENOM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DATE_DE_NAISSANCE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SEXE" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="T_PERSONNE_T_EMPLOI" Member="T_EMPLOI" ThisKey="ID_PERSONNE" OtherKey="ID_PERSONNE" Type="T_EMPLOI" />
+      <Association Name="T_PERSONNE_T_ETUDIANT" Member="T_ETUDIANT" ThisKey="ID_PERSONNE" OtherKey="ID_PERSONNE" Type="T_ETUDIANT" />
+      <Association Name="T_CONSEILLER_T_PERSONNE" Member="T_CONSEILLER" ThisKey="ID_CONSEILLER" OtherKey="ID_CONSEILLER" Type="T_CONSEILLER" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
