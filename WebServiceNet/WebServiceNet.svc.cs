@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using ScutedelaBDD;
 
 namespace WebServiceNet
 {
@@ -22,6 +23,25 @@ namespace WebServiceNet
                 lip.Add(convertJavaPersonneToCSharp(jip));
             }
             return lip;
+        }
+
+        public List<InfoPersonne> recherchePersonnes(InfoPersonne ip) {
+
+            List<InfoPersonne> liste = new List<InfoPersonne>();
+            DataSQLDataContext db = new DataSQLDataContext();
+
+            var q = from p in db.T_PERSONNE
+                    select p;
+
+            q = q.Where(p => p.NOM.Contains((ip.Nom != null) ? ip.Nom : ""));
+            q = q.Where(p => p.PRENOM.Contains((ip.Prenom != null) ? ip.Prenom : ""));
+
+            foreach(var p in q)
+            {
+                liste.Add(new InfoPersonne(TPersonne.findByIdPersonne((int)p.ID_PERSONNE)[0]));
+            }
+
+            return liste;
         }
 
         public InfoPersonne convertJavaPersonneToCSharp(ServiceReference1.infoPersonne jip)

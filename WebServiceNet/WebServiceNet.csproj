@@ -40,6 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
@@ -115,6 +116,10 @@
     <ProjectReference Include="..\ObjetExterne\ObjetExterne.csproj">
       <Project>{6c359396-d4e6-4bec-be23-d60bbfd26e7a}</Project>
       <Name>ObjetExterne</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScutedelaBDD\ScutedelaBDD.csproj">
+      <Project>{51f40492-d7f8-4143-a660-361bb4f511ee}</Project>
+      <Name>ScutedelaBDD</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

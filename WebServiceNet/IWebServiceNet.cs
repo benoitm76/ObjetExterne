@@ -14,5 +14,8 @@ namespace WebServiceNet
     {
         [OperationContract]
         List<InfoPersonne> rechercheExtrePersonne(InfoPersonne searchip);
+
+        [OperationContract]
+        List<InfoPersonne> recherchePersonnes(InfoPersonne ip);
     }
 }
