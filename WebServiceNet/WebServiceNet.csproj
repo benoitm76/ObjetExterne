@@ -40,6 +40,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ObjetExterne, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Test\bin\Debug\ObjetExterne.dll</HintPath>
+    </Reference>
+    <Reference Include="ScutedelaBDD, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Test\bin\Debug\ScutedelaBDD.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -111,16 +119,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ObjetExterne\ObjetExterne.csproj">
-      <Project>{6c359396-d4e6-4bec-be23-d60bbfd26e7a}</Project>
-      <Name>ObjetExterne</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ScutedelaBDD\ScutedelaBDD.csproj">
-      <Project>{51f40492-d7f8-4143-a660-361bb4f511ee}</Project>
-      <Name>ScutedelaBDD</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

@@ -12,6 +12,8 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            #region Intérogation C#
+            /*
             ServiceReference1.WebServiceNetClient pxy = new ServiceReference1.WebServiceNetClient();
             InfoPersonne ipz = new InfoPersonne();
             ipz.Prenom = "V";
@@ -21,7 +23,9 @@ namespace Test
             {
                 Console.WriteLine(ip.Nom + " - " + ip.Prenom);
             }
-
+            */
+            #endregion
+            #region Intérogation Java
             /*WebService.WebServiceNetClient pxy = new WebService.WebServiceNetClient();
             InfoPersonne ipz = new InfoPersonne();
             ipz.Prenom = "Vincent";
@@ -30,6 +34,8 @@ namespace Test
             {
                 System.Console.Out.WriteLine(ip.Nom);
             }*/
+            #endregion
+            #region Osef
             /*
             DataSQLDataContext db = new DataSQLDataContext();
             var q = from p in db.T_PERSONNE
@@ -42,6 +48,7 @@ namespace Test
             {
                 Console.WriteLine(p.NOM + " - " + p.PRENOM);
             }*/
+            #endregion
             Console.In.Read();
         }
     }
