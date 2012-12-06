@@ -20,6 +20,12 @@ namespace Test.WebService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWebServiceNet/rechercheExtrePersonne", ReplyAction="http://tempuri.org/IWebServiceNet/rechercheExtrePersonneResponse")]
         System.Threading.Tasks.Task<ObjetExterne.InfoPersonne[]> rechercheExtrePersonneAsync(ObjetExterne.InfoPersonne searchip);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWebServiceNet/recherchePersonnes", ReplyAction="http://tempuri.org/IWebServiceNet/recherchePersonnesResponse")]
+        ObjetExterne.InfoPersonne[] recherchePersonnes(ObjetExterne.InfoPersonne ip);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWebServiceNet/recherchePersonnes", ReplyAction="http://tempuri.org/IWebServiceNet/recherchePersonnesResponse")]
+        System.Threading.Tasks.Task<ObjetExterne.InfoPersonne[]> recherchePersonnesAsync(ObjetExterne.InfoPersonne ip);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +61,14 @@ namespace Test.WebService {
         
         public System.Threading.Tasks.Task<ObjetExterne.InfoPersonne[]> rechercheExtrePersonneAsync(ObjetExterne.InfoPersonne searchip) {
             return base.Channel.rechercheExtrePersonneAsync(searchip);
+        }
+        
+        public ObjetExterne.InfoPersonne[] recherchePersonnes(ObjetExterne.InfoPersonne ip) {
+            return base.Channel.recherchePersonnes(ip);
+        }
+        
+        public System.Threading.Tasks.Task<ObjetExterne.InfoPersonne[]> recherchePersonnesAsync(ObjetExterne.InfoPersonne ip) {
+            return base.Channel.recherchePersonnesAsync(ip);
         }
     }
 }

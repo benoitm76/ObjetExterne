@@ -19,14 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:29060/WebServiceNet.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:55111/WebServiceNet.svc?singleWsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WebServiceNet.xsd" MetadataType="Schema" ID="e75c3813-11f1-4a6d-b4c7-f80722a7a5f8" SourceId="1" SourceUrl="http://localhost:29060/WebServiceNet.svc?xsd=xsd2" />
-    <MetadataFile FileName="WebServiceNet1.xsd" MetadataType="Schema" ID="ee948fbb-6be5-4479-867e-2e939bd6c232" SourceId="1" SourceUrl="http://localhost:29060/WebServiceNet.svc?xsd=xsd1" />
-    <MetadataFile FileName="WebServiceNet.wsdl" MetadataType="Wsdl" ID="314a3506-5933-49a9-8630-9ff29f111dc3" SourceId="1" SourceUrl="http://localhost:29060/WebServiceNet.svc?wsdl" />
-    <MetadataFile FileName="WebServiceNet2.xsd" MetadataType="Schema" ID="ffbba86a-7b74-48e6-94e9-94bf90f55ee7" SourceId="1" SourceUrl="http://localhost:29060/WebServiceNet.svc?xsd=xsd0" />
-    <MetadataFile FileName="WebServiceNet.disco" MetadataType="Disco" ID="cebc1720-2853-4062-a2da-ef40e9f95c18" SourceId="1" SourceUrl="http://localhost:29060/WebServiceNet.svc?disco" />
+    <MetadataFile FileName="WebServiceNet1.wsdl" MetadataType="Wsdl" ID="01ec3f9e-3bbf-4f1b-b102-f2311990a362" SourceId="1" SourceUrl="http://localhost:55111/WebServiceNet.svc?singleWsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

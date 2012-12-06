@@ -60,17 +60,8 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Properties\DataSources\ObjetExterne.InfoPersonne.datasource" />
-    <None Include="Service References\ServiceReference1\WebServiceNet.wsdl" />
-    <None Include="Service References\ServiceReference1\WebServiceNet.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReference1\WebServiceNet1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReference1\WebServiceNet2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WebService\WebServiceNet.wsdl" />
+    <None Include="Service References\ServiceReference1\WebServiceNet1.wsdl" />
+    <None Include="Service References\WebService\WebServiceNet1.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ObjetExterne\ObjetExterne.csproj">
@@ -100,9 +91,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReference1\WebServiceNet.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceReference1\configuration91.svcinfo" />

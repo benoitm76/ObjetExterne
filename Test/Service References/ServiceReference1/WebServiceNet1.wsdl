@@ -17,6 +17,20 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="recherchePersonnes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ObjetExterne" minOccurs="0" name="ip" nillable="true" type="q3:InfoPersonne" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="recherchePersonnesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ObjetExterne" minOccurs="0" name="recherchePersonnesResult" nillable="true" type="q4:ArrayOfInfoPersonne" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
     </xs:schema>
     <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:element name="anyType" nillable="true" type="xs:anyType" />
@@ -101,10 +115,20 @@
   <wsdl:message name="IWebServiceNet_rechercheExtrePersonne_OutputMessage">
     <wsdl:part name="parameters" element="tns:rechercheExtrePersonneResponse" />
   </wsdl:message>
+  <wsdl:message name="IWebServiceNet_recherchePersonnes_InputMessage">
+    <wsdl:part name="parameters" element="tns:recherchePersonnes" />
+  </wsdl:message>
+  <wsdl:message name="IWebServiceNet_recherchePersonnes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:recherchePersonnesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWebServiceNet">
     <wsdl:operation name="rechercheExtrePersonne">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceNet/rechercheExtrePersonne" message="tns:IWebServiceNet_rechercheExtrePersonne_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceNet/rechercheExtrePersonneResponse" message="tns:IWebServiceNet_rechercheExtrePersonne_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="recherchePersonnes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWebServiceNet/recherchePersonnes" message="tns:IWebServiceNet_recherchePersonnes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWebServiceNet/recherchePersonnesResponse" message="tns:IWebServiceNet_recherchePersonnes_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWebServiceNet" type="tns:IWebServiceNet">
@@ -118,10 +142,19 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="recherchePersonnes">
+      <soap:operation soapAction="http://tempuri.org/IWebServiceNet/recherchePersonnes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="WebServiceNet">
     <wsdl:port name="BasicHttpBinding_IWebServiceNet" binding="tns:BasicHttpBinding_IWebServiceNet">
-      <soap:address location="http://localhost:29060/WebServiceNet.svc" />
+      <soap:address location="http://localhost:55111/WebServiceNet.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -12,13 +12,13 @@ namespace ObjetExterne
     public class InfoMetier
     {
         [DataMember]
-        private int ID;
+        public int ID { get; set; }
         [DataMember]
-        private InfoType Type;
+        public InfoType Type { get; set; }
         [DataMember]
-        private string Nom;
+        public string Nom { get; set; }
 
-        public int getID()
+        /*public int getID()
         {
             return ID;
         }
@@ -46,7 +46,7 @@ namespace ObjetExterne
         public void setNom(string Nom)
         {
             this.Nom = Nom;
-        }
+        }*/
 
         public InfoMetier()
         {

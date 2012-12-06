@@ -26,14 +26,14 @@ namespace Test
             */
             #endregion
             #region Intérogation Java
-            /*WebService.WebServiceNetClient pxy = new WebService.WebServiceNetClient();
+            WebService.WebServiceNetClient pxy = new WebService.WebServiceNetClient();
             InfoPersonne ipz = new InfoPersonne();
             ipz.Prenom = "Vincent";
             InfoPersonne[] lip = pxy.rechercheExtrePersonne(ipz);
             foreach (InfoPersonne ip in lip)
             {
                 System.Console.Out.WriteLine(ip.Nom);
-            }*/
+            }
             #endregion
             #region Osef
             /*

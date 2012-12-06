@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:29060/WebServiceNet.svc?singleWsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:55111/WebServiceNet.svc?singleWsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WebServiceNet.wsdl" MetadataType="Wsdl" ID="f8a9321a-8ce7-4814-91d3-2c76dc54da06" SourceId="1" SourceUrl="http://localhost:29060/WebServiceNet.svc?singleWsdl" />
+    <MetadataFile FileName="WebServiceNet1.wsdl" MetadataType="Wsdl" ID="01eaf9ce-02c9-4d64-9958-130cc2f7443c" SourceId="1" SourceUrl="http://localhost:55111/WebServiceNet.svc?singleWsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

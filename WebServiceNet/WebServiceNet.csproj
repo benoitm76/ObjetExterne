@@ -40,14 +40,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="ObjetExterne, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Test\bin\Debug\ObjetExterne.dll</HintPath>
-    </Reference>
-    <Reference Include="ScutedelaBDD, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Test\bin\Debug\ScutedelaBDD.dll</HintPath>
-    </Reference>
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -126,6 +118,16 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ObjetExterne\ObjetExterne.csproj">
+      <Project>{6c359396-d4e6-4bec-be23-d60bbfd26e7a}</Project>
+      <Name>ObjetExterne</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScutedelaBDD\ScutedelaBDD.csproj">
+      <Project>{51f40492-d7f8-4143-a660-361bb4f511ee}</Project>
+      <Name>ScutedelaBDD</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -139,9 +141,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>25681</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:29060/</IISUrl>
+          <IISUrl>http://localhost:55111/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
