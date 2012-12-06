@@ -17,7 +17,7 @@ namespace WebServiceNet
         {
             ServiceReference1.PersonneWebServiceClient pxy = new ServiceReference1.PersonneWebServiceClient();
             ServiceReference1.infoPersonne[] jlip = pxy.RecherchePersonnes(convertToCSharpJavaPersonne(searchip), false);
-            List<InfoPersonne> lip = new List<InfoPersonne>();            
+            List<InfoPersonne> lip = new List<InfoPersonne>();
             foreach (ServiceReference1.infoPersonne jip in jlip)
             {
                 lip.Add(convertJavaPersonneToCSharp(jip));
@@ -25,7 +25,8 @@ namespace WebServiceNet
             return lip;
         }
 
-        public List<InfoPersonne> recherchePersonnes(InfoPersonne ip) {
+        public List<InfoPersonne> recherchePersonnes(InfoPersonne ip)
+        {
 
             List<InfoPersonne> liste = new List<InfoPersonne>();
             DataSQLDataContext db = new DataSQLDataContext();
@@ -35,8 +36,14 @@ namespace WebServiceNet
 
             q = q.Where(p => p.NOM.Contains((ip.Nom != null) ? ip.Nom : ""));
             q = q.Where(p => p.PRENOM.Contains((ip.Prenom != null) ? ip.Prenom : ""));
+            DateTime dt;
+            if (DateTime.TryParse(ip.DateNaissance, out dt))
+            {
+                q = q.Where(p => p.DATE_DE_NAISSANCE.Equals(dt));
+            }
+            q = q.Where(p => p.SEXE.Equals((ip.Sexe) ? '1' : '0'));
 
-            foreach(var p in q)
+            foreach (var p in q)
             {
                 liste.Add(new InfoPersonne(TPersonne.findByIdPersonne((int)p.ID_PERSONNE)[0]));
             }
